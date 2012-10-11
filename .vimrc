@@ -18,8 +18,9 @@ set showcmd			" Affiche les commandes incomplètes (ex.: Affiche où l'on se tro
 set history=50		" Définit la taille de l'historique
 
 set background=dark	" Définit la couleur de fond du terminal comme sombre
+
 if has("gui_running")
-	set t_Co=256		" Définit le nombre de couleur du terminal
+	set t_Co=256
 	set background=light	" En cas de GUI, l'arrière plan est claire
 endif
 
@@ -48,3 +49,6 @@ endif
 if !empty(glob("~/.vimrc.bepo"))	" On contrôle si le fichier existe
 	source ~/.vimrc.bepo
 endif
+
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
