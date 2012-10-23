@@ -17,10 +17,13 @@ set showcmd			" Affiche les commandes incomplètes (ex.: Affiche où l'on se tro
 
 set history=50		" Définit la taille de l'historique
 
+if $TERM ==? 'xterm'
+	set t_Co=256
+endif
+
 set background=dark	" Définit la couleur de fond du terminal comme sombre
 
 if has("gui_running")
-	set t_Co=256
 	set background=light	" En cas de GUI, l'arrière plan est claire
 endif
 
