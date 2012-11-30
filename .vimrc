@@ -19,7 +19,7 @@ set history=50		" Définit la taille de l'historique
 
 if $TERM =~ '256color'
 	set t_Co=256
-if $TERM =~ '^xterm$'
+elseif $TERM =~ '^xterm$'
 	set t_Co=256
 endif
 
