@@ -25,13 +25,15 @@ endif
 
 set background=dark	" Définit la couleur de fond du terminal comme sombre
 
-if has("gui_running")
-	set background=light	" En cas de GUI, l'arrière plan est claire
-endif
+" if has("gui_running")
+" 	set background=light	" En cas de GUI, l'arrière plan est claire
+" endif
 
 syntax on			" Active la coloration syntaxique
 set number			" Affiche le N° de la ligne
-if !empty(glob("~/.vim/colors/Tomorrow-Night.vim"))	" On contrôle si le thème existe
+if !empty(glob("~/.vim/colors/solarized.vim"))
+	colorscheme solarized
+elseif !empty(glob("~/.vim/colors/Tomorrow-Night.vim"))	" On contrôle si le thème existe
 	colorscheme Tomorrow-Night
 endif
 
