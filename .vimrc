@@ -17,7 +17,9 @@ set showcmd			" Affiche les commandes incomplètes (ex.: Affiche où l'on se tro
 
 set history=50		" Définit la taille de l'historique
 
-if $TERM ==? 'xterm'
+if $TERM =~ '256color'
+	set t_Co=256
+elseif $TERM =~ '^xterm$'
 	set t_Co=256
 endif
 
@@ -55,6 +57,9 @@ if !empty(glob("~/.vimrc.bepo"))	" On contrôle si le fichier existe
 endif
 
 let g:tex_flavor='latex'
+
+set laststatus=2
+set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
