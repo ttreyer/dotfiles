@@ -43,6 +43,7 @@ if has("autocmd")
 	autocmd FileType ruby setlocal tabstop=2 shiftwidth=2
 	autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 	autocmd FileType python setlocal expandtab
+	autocmd FileType tex setlocal wrap
 endif
 
 if has("mouse")
@@ -52,6 +53,8 @@ endif
 if !empty(glob("~/.vimrc.bepo"))	" On contrôle si le fichier existe
 	source ~/.vimrc.bepo
 endif
+
+let g:tex_flavor='latex'
 
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
