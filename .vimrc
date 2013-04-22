@@ -31,9 +31,7 @@ set background=dark	" Définit la couleur de fond du terminal comme sombre
 
 syntax on			" Active la coloration syntaxique
 set number			" Affiche le N° de la ligne
-if !empty(glob("~/.vim/colors/solarized.vim"))
-	colorscheme solarized
-elseif !empty(glob("~/.vim/colors/Tomorrow-Night.vim"))	" On contrôle si le thème existe
+if !empty(glob("~/.vim/colors/Tomorrow-Night.vim"))	" On contrôle si le thème existe
 	colorscheme Tomorrow-Night
 endif
 
@@ -57,6 +55,8 @@ endif
 if !empty(glob("~/.vimrc.bepo"))	" On contrôle si le fichier existe
 	source ~/.vimrc.bepo
 endif
+
+set backupdir=~/.vim/backup//
 
 let g:tex_flavor='latex'
 
