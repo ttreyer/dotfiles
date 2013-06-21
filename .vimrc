@@ -46,6 +46,10 @@ if has("autocmd")
 	autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 	autocmd FileType python setlocal expandtab
 	autocmd FileType tex setlocal wrap
+
+	" Surlignage des espaces insécables
+	highlight NBSP ctermbg=red guibg=red
+	autocmd Syntax * syn match NBSP /\%u00A0/
 endif
 
 if has("mouse")
