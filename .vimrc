@@ -46,10 +46,6 @@ if has("autocmd")
 	autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 	autocmd FileType python setlocal expandtab
 	autocmd FileType tex setlocal wrap
-
-	" Surlignage des espaces insécables
-	highlight NBSP ctermbg=red guibg=red
-	autocmd Syntax * syn match NBSP /\%u00A0/
 endif
 
 if has("mouse")
@@ -66,6 +62,10 @@ let g:tex_flavor='latex'
 
 set laststatus=2
 set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+
+" Surlignage des espaces insécables
+highlight NBSP ctermbg=Red guibg=Red
+match NBSP /\%u00A0/
 
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
