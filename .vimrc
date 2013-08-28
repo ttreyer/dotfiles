@@ -45,7 +45,8 @@ if has("autocmd")
 	autocmd FileType ruby setlocal tabstop=2 shiftwidth=2
 	autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 	autocmd FileType python setlocal expandtab
-	autocmd FileType tex setlocal wrap
+	autocmd FileType tex setlocal wrap linebreak spell spelllang=fr
+	autocmd FileType text setlocal wrap linebreak spell spelllang=fr
 endif
 
 if has("mouse")
