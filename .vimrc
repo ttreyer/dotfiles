@@ -46,7 +46,7 @@ if has("autocmd")
 	autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 	autocmd FileType python setlocal expandtab
 	autocmd FileType tex setlocal wrap linebreak spell spelllang=fr
-	autocmd FileType text setlocal wrap linebreak spell spelllang=fr
+	autocmd FileType text setlocal wrap linebreak
 	autocmd FileType make setlocal nomodeline
 endif
 
