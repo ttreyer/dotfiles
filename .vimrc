@@ -47,6 +47,7 @@ if has("autocmd")
 	autocmd FileType python setlocal expandtab
 	autocmd FileType tex setlocal wrap linebreak spell spelllang=fr
 	autocmd FileType text setlocal wrap linebreak spell spelllang=fr
+	autocmd FileType make setlocal nomodeline
 endif
 
 if has("mouse")
