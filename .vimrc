@@ -13,7 +13,7 @@ set ignorecase		" Ignorer la casse
 set smartcase		" Sauf si il y a une lettre en majuscule
 
 set ruler			" Affiche la position du curseur en bas à droite
-set showcmd			" Affiche les commandes incomplètes (ex.: Affiche où l'on se trouve lors d'une sécance d'intsruction -ci'-)
+set showcmd			" Affiche les commandes incomplètes (ex.: Affiche où l'on se trouve lors d'une séquence d'instructions -ci'-)
 
 set history=50		" Définit la taille de l'historique
 
@@ -38,6 +38,8 @@ endif
 set autoindent		" Permet de garder l'indentation d'une ligne à l'autre
 set smarttab
 
+set spelllang=fr	" Définit le français pour contrôler l'orthographe
+
 if has("autocmd")
 	filetype plugin indent on	" Charge les plugins et l'indentation selon le type de fichier
 
@@ -45,7 +47,7 @@ if has("autocmd")
 	autocmd FileType ruby setlocal tabstop=2 shiftwidth=2
 	autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 	autocmd FileType python setlocal expandtab
-	autocmd FileType tex setlocal wrap linebreak spell spelllang=fr
+	autocmd FileType tex setlocal wrap linebreak spell
 	autocmd FileType text setlocal wrap linebreak
 	autocmd FileType make setlocal nomodeline
 endif
