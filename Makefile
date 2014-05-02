@@ -1,4 +1,4 @@
-all: vim awesome
+all: vim awesome git
 
 vim: vim-bepo
 
@@ -13,3 +13,6 @@ awesome:
 	ln -s $(CURDIR)/.config ~/.config
 	ln -s $(CURDIR)/.xinitrc ~/.xinitrc
 	ln -s $(CURDIR)/.Xresources ~/.Xresources
+
+git:
+	ln -s $(CURDIR)/.gitconfig ~/.gitconfig
