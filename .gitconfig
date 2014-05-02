@@ -1,6 +1,10 @@
 [core]
 	editor = vim
 
+[user]
+	name = Thierry Treyer
+	email = zehkae@gmail.com
+
 [color]
 	ui = true
 
