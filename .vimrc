@@ -1,75 +1,84 @@
-set nocompatible	" Utilise les paramètres de Vim au lieu de ceux de Vi
-set encoding=utf-8	" Définit l'encodage
- 
-" Whitespace
-set nowrap			" Ne pas couper les lignes trop longues
-set tabstop=4 shiftwidth=4	" Une tabulation correspond à 4 espaces
-set backspace=indent,eol,start	" En mode insertion, on peut tout effacer
- 
-" Searching
-set hlsearch		" Mettre en surbrillance les résultat
-set incsearch		" Débute la recherche au moment même où l'on tape la première lettre
-set ignorecase		" Ignorer la casse
-set smartcase		" Sauf si il y a une lettre en majuscule
+set encoding=utf-8
+set nocompatible
+filetype off
 
-set ruler			" Affiche la position du curseur en bas à droite
-set showcmd			" Affiche les commandes incomplètes (ex.: Affiche où l'on se trouve lors d'une séquence d'instructions -ci'-)
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-set history=50		" Définit la taille de l'historique
+Plugin 'VundleVim/Vundle.vim'
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'scrooloose/syntastic'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'airblade/vim-gitgutter'
+" Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'vim-perl/vim-perl'
+" Plugin 'yko/mojo.vim'
+" Plugin 'nanotech/jellybeans.vim'
 
-if $TERM =~ '256color'
-	set t_Co=256
-elseif $TERM =~ '^xterm$'
-	set t_Co=256
-endif
+call vundle#end()
+filetype plugin indent on
 
-set background=dark	" Définit la couleur de fond du terminal comme sombre
+" --- Setup colorscheme ---
+syntax on
+set number
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+set background=dark
+colorscheme jellybeans
 
-" if has("gui_running")
-" 	set background=light	" En cas de GUI, l'arrière plan est claire
-" endif
-
-syntax on			" Active la coloration syntaxique
-set number			" Affiche le N° de la ligne
-if !empty(glob("~/.vim/colors/Tomorrow-Night.vim"))	" On contrôle si le thème existe
-	colorscheme Tomorrow-Night
-endif
-
-set autoindent		" Permet de garder l'indentation d'une ligne à l'autre
-set smarttab
-
-set spelllang=fr	" Définit le français pour contrôler l'orthographe
-
-if has("autocmd")
-	filetype plugin indent on	" Charge les plugins et l'indentation selon le type de fichier
-
-	" Règles particulières à certain fichier
-	autocmd FileType ruby setlocal tabstop=2 shiftwidth=2
-	autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
-	autocmd FileType python setlocal expandtab
-	autocmd FileType tex setlocal wrap linebreak spell
-	autocmd FileType text setlocal wrap linebreak
-	autocmd FileType make setlocal nomodeline
-endif
-
-if has("mouse")
-	set mouse=a		" Si le terminal support la souris, on l'active dans Vim
-endif
-
-if !empty(glob("~/.vimrc.bepo"))	" On contrôle si le fichier existe
-	source ~/.vimrc.bepo
-endif
-
-set backupdir=~/.vim/backup//
-
-let g:tex_flavor='latex'
+" --- Setup airline ---
+hi clear SignColumn
+let g:airline#extensions#hunks#non_zero_only=1
 
 set laststatus=2
-set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 
-" Surlignage des espaces insécables
-highlight NBSP ctermbg=Red guibg=Red
-match NBSP /\%u00A0/
+let g:airline_detect_paste = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+" --- Setup syntastic ---
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_enable_perl_checker = 1
+
+let g:syntastic_c_checkers = [ 'clang_check' ]
+let g:syntastic_perl_checkers = [ 'perl' ]
+let g:syntastic_scala_checkers = [ 'scalac' ]
+
+" --- Setup Mojolicious ---
+let mojo_highlight_data = 1
+
+" --- Whitespace ---
+set nowrap
+set tabstop=4 shiftwidth=4 expandtab
+set backspace=indent,eol,start
+
+set autoindent
+set smarttab
+
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
+autocmd FileType make setlocal nomodeline
+autocmd FileType perl setlocal tabstop=2 shiftwidth=2
+autocmd FileType tex setlocal wrap linebreak
+autocmd FileType text setlocal wrap linebreak
+
+" --- Misc ---
+set mouse=a
+
+set hlsearch incsearch
+set ignorecase smartcase
+
+set ruler
+set showcmd
+
+" --- Load bepo remap ---
+if !empty(glob('~/.vimrc.bepo'))
+	source ~/.vimrc.bepo
+end
 
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
