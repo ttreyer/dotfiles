@@ -1,4 +1,4 @@
-all: vim awesome git
+all: vim git
 
 vim: vim-bepo
 
