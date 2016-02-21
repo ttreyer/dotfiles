@@ -1,2 +1,7 @@
 .vim/spell
 .vim/.netrwhist
+.vim/bundle/*
+
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*~
