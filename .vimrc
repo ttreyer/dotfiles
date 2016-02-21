@@ -6,16 +6,16 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-" Plugin 'scrooloose/nerdtree'
-" Plugin 'tpope/vim-fugitive'
-" Plugin 'scrooloose/syntastic'
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'airblade/vim-gitgutter'
-" Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'vim-perl/vim-perl'
-" Plugin 'yko/mojo.vim'
-" Plugin 'nanotech/jellybeans.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-perl/vim-perl'
+Plugin 'yko/mojo.vim'
+Plugin 'nanotech/jellybeans.vim'
 
 call vundle#end()
 filetype plugin indent on
