@@ -61,7 +61,7 @@ set autoindent
 set smarttab
 
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
-autocmd FileType make setlocal nomodeline
+autocmd FileType make setlocal nomodeline noexpandtab
 autocmd FileType perl setlocal tabstop=2 shiftwidth=2
 autocmd FileType tex setlocal wrap linebreak
 autocmd FileType text setlocal wrap linebreak
