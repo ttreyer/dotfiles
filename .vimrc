@@ -43,12 +43,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_enable_perl_checker = 1
-
 let g:syntastic_c_checkers = [ 'gcc' ]
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_c_compiler_options = '-std=c11 -Weverything -pedantic'
-let g:syntastic_perl_checkers = [ 'perl' ]
+let g:syntastic_java_checkers = [ 'javac' ]
 let g:syntastic_scala_checkers = [ 'scalac' ]
 
 " --- Setup Mojolicious ---
