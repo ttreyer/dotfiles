@@ -14,6 +14,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-perl/vim-perl'
+Plugin 'derekwyatt/vim-scala'
 Plugin 'yko/mojo.vim'
 Plugin 'nanotech/jellybeans.vim'
 
@@ -43,11 +44,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_c_checkers = [ 'gcc' ]
+let g:syntastic_c_checkers = [ 'make' ]
 let g:syntastic_c_compiler = 'clang'
-let g:syntastic_c_compiler_options = '-std=c11 -Weverything -pedantic'
-let g:syntastic_java_checkers = [ 'javac' ]
-let g:syntastic_scala_checkers = [ 'scalac' ]
+" let g:syntastic_java_checkers = [ 'javac' ]
+" let g:syntastic_scala_checkers = [ 'scalac' ]
 
 " --- Setup Mojolicious ---
 let mojo_highlight_data = 1
