@@ -24,7 +24,7 @@ filetype plugin indent on
 " --- Setup colorscheme ---
 syntax on
 set number
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+set guifont=Menlo\ for\ Powerline:h12
 set background=dark
 colorscheme jellybeans
 
@@ -48,6 +48,10 @@ let g:syntastic_c_checkers = [ 'make' ]
 let g:syntastic_c_compiler = 'clang'
 " let g:syntastic_java_checkers = [ 'javac' ]
 " let g:syntastic_scala_checkers = [ 'scalac' ]
+
+let g:syntastic_mode_map = {
+            \ "mode": "active",
+            \ "passive_filetypes": [ "perl" ] }
 
 " --- Setup Mojolicious ---
 let mojo_highlight_data = 1
