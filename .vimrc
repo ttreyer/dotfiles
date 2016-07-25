@@ -67,6 +67,7 @@ set smarttab
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 autocmd FileType make setlocal nomodeline noexpandtab
 autocmd FileType perl setlocal tabstop=2 shiftwidth=2
+autocmd FileType php setlocal noexpandtab
 autocmd FileType tex setlocal wrap linebreak
 autocmd FileType text setlocal wrap linebreak
 
@@ -81,7 +82,7 @@ set showcmd
 
 " --- Load bepo remap ---
 if !empty(glob('~/.vimrc.bepo'))
-	source ~/.vimrc.bepo
+    source ~/.vimrc.bepo
 end
 
 nnoremap <C-Left> :tabprevious<CR>
