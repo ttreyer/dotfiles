@@ -8,9 +8,9 @@ Personnal configuration for Vim and Git.
 
 ```bash
 $ git submodule init && git submodule update
-$ make vim-base \#Basic installation
+$ make vim-base #Basic installation
 # or
-$ make vim-bepo \#Bepo layout support
+$ make vim-bepo #Bepo layout support
 $ make git
 ```
 
