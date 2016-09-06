@@ -14,8 +14,9 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-perl/vim-perl'
-Plugin 'derekwyatt/vim-scala'
 Plugin 'yko/mojo.vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'tikhomirov/vim-glsl'
 Plugin 'nanotech/jellybeans.vim'
 
 call vundle#end()
@@ -25,6 +26,7 @@ filetype plugin indent on
 syntax on
 set number
 set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+set guioptions-=T
 set background=dark
 colorscheme jellybeans
 
@@ -46,8 +48,6 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_c_checkers = [ 'make' ]
 let g:syntastic_c_compiler = 'clang'
-" let g:syntastic_java_checkers = [ 'javac' ]
-" let g:syntastic_scala_checkers = [ 'scalac' ]
 
 " --- Setup Mojolicious ---
 let mojo_highlight_data = 1
@@ -75,10 +75,12 @@ set ignorecase smartcase
 set ruler
 set showcmd
 
+set wildignore+=local/*
+
 " --- Load bepo remap ---
 if !empty(glob('~/.vimrc.bepo'))
 	source ~/.vimrc.bepo
 end
 
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-Left> :bprevious<CR>
+nnoremap <C-Right> :bnext<CR>
