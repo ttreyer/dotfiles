@@ -1,0 +1,19 @@
+AWESOME DOTFILES
+================
+
+Install VIM configuration
+-------------------------
+
+Since you're probably here only for VIM, let's skip the other stuff.
+
+  1. Clone this repository: git clone https://github.com/zehkae/dotfiles
+  2. Get Vundle: git submodule init && git submodule update
+  3. Move away your old configuration: mv ~/.vim{,.old} && mv ~/.vimrc{,.old}
+  4. Install the configuration: make vim-base
+  5. Install the plugin by executing the following command in VIM: :VundleInstall
+  6. Finally, don't forget to install the Powerline font of your choice and use it by changing the 'guifont' setting
+
+Git configuration
+-----------------
+
+Take a look to the .gitconfig file, the aliases can make your life easier.
