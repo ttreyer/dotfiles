@@ -49,6 +49,10 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_c_checkers = [ 'make' ]
 let g:syntastic_c_compiler = 'clang'
 
+let g:syntastic_mode_map = {
+            \ "mode": "active",
+            \ "passive_filetypes": [ "perl" ] }
+
 " --- Setup Mojolicious ---
 let mojo_highlight_data = 1
 
@@ -63,6 +67,7 @@ set smarttab
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 autocmd FileType make setlocal nomodeline noexpandtab
 autocmd FileType perl setlocal tabstop=2 shiftwidth=2
+autocmd FileType php setlocal noexpandtab
 autocmd FileType tex setlocal wrap linebreak
 autocmd FileType text setlocal wrap linebreak
 
@@ -79,7 +84,7 @@ set wildignore+=local/*
 
 " --- Load bepo remap ---
 if !empty(glob('~/.vimrc.bepo'))
-	source ~/.vimrc.bepo
+    source ~/.vimrc.bepo
 end
 
 nnoremap <C-Left> :bprevious<CR>
