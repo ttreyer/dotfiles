@@ -8,15 +8,15 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
+Plugin 'mhinz/vim-startify'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mbbill/undotree'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'yko/mojo.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-perl/vim-perl'
-Plugin 'yko/mojo.vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'tikhomirov/vim-glsl'
 Plugin 'nanotech/jellybeans.vim'
 
 call vundle#end()
@@ -53,6 +53,9 @@ let g:syntastic_mode_map = {
             \ "mode": "active",
             \ "passive_filetypes": [ "perl" ] }
 
+" --- Setup CtrlP ---
+let g:ctrlp_working_path_mode = 'ra'
+
 " --- Setup Mojolicious ---
 let mojo_highlight_data = 1
 
@@ -67,6 +70,7 @@ set smarttab
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 autocmd FileType make setlocal nomodeline noexpandtab
 autocmd FileType perl setlocal tabstop=2 shiftwidth=2
+autocmd FileType html.ep setlocal tabstop=2 shiftwidth=2
 autocmd FileType php setlocal noexpandtab
 autocmd FileType tex setlocal wrap linebreak
 autocmd FileType text setlocal wrap linebreak
@@ -80,7 +84,7 @@ set ignorecase smartcase
 set ruler
 set showcmd
 
-set wildignore+=local/*
+set wildignore+=local
 
 " --- Load bepo remap ---
 if !empty(glob('~/.vimrc.bepo'))
