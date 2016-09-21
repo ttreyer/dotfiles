@@ -53,8 +53,15 @@ let g:syntastic_mode_map = {
             \ "mode": "active",
             \ "passive_filetypes": [ "perl" ] }
 
+" --- Setup Startify ---
+let g:startify_list_order = [ 'bookmarks', 'sessions', 'files', 'dir', 'commands' ]
+let g:startify_bookmarks = [ '~/src/perl/artisphere' ]
+let g:startify_session_persistence = 1
+let g:startify_change_to_vcs_root = 1
+
 " --- Setup CtrlP ---
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_reuse_window = 'NERD'
 
 " --- Setup Mojolicious ---
 let mojo_highlight_data = 1
