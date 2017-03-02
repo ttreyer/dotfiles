@@ -11,3 +11,6 @@ vim-bepo: vim-base
 
 git:
 	ln -s $(CURDIR)/.gitconfig ~/.gitconfig
+	
+hammerspoon:
+	ln -s $(CURDIR)/.hammerspoon ~/.hammerspoon

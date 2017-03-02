@@ -30,6 +30,9 @@ set guioptions-=T
 set background=dark
 colorscheme jellybeans
 
+" --- Setup Ctrlp
+let g:ctrlp_show_hidden = 1
+
 " --- Setup airline ---
 hi clear SignColumn
 let g:airline#extensions#hunks#non_zero_only=1
