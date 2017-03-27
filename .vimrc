@@ -18,6 +18,7 @@ Plugin 'yko/mojo.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nanotech/jellybeans.vim'
+"Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -51,7 +52,7 @@ let g:syntastic_c_compiler = 'clang'
 
 let g:syntastic_mode_map = {
             \ "mode": "active",
-            \ "passive_filetypes": [ "perl" ] }
+            \ "passive_filetypes": [ "perl", "scala" ] }
 
 " --- Setup Startify ---
 let g:startify_list_order = [ 'bookmarks', 'sessions', 'files', 'dir', 'commands' ]
@@ -62,6 +63,10 @@ let g:startify_change_to_vcs_root = 1
 " --- Setup CtrlP ---
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_reuse_window = 'NERD'
+let g:ctrlp_extensions = [ 'autoignore' ]
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/](target|build)$'
+  \ }
 
 " --- Setup Mojolicious ---
 let mojo_highlight_data = 1
