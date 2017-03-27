@@ -1,7 +1,5 @@
-.vim/spell
-.vim/.netrwhist
-.vim/bundle/*
+# Vim's stuff
+.*.sw?
 
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
-*~
+# SBT's stuff
+target/

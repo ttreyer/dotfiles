@@ -1,5 +1,6 @@
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore
 
 [user]
 	name = Thierry Treyer
@@ -12,5 +13,6 @@
 	st = status
 	co = checkout
 	ci = commit
+
 [push]
 	default = simple
