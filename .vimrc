@@ -31,6 +31,9 @@ set guioptions-=T
 set background=dark
 colorscheme jellybeans
 
+" --- Enable persistant undo ---
+set undofile
+
 " --- Setup airline ---
 hi clear SignColumn
 let g:airline#extensions#hunks#non_zero_only=1
