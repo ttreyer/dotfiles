@@ -1,5 +1,6 @@
 # Vim's stuff
 .*.sw?
+.*.un~
 
 # SBT's stuff
 target/
