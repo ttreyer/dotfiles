@@ -9,7 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'mhinz/vim-startify'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mbbill/undotree'
@@ -18,6 +18,12 @@ Plugin 'yko/mojo.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'pbrisbin/vim-mkdir'
+Plugin 'sickill/vim-pasta'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-eunuch'
+Plugin 'w0rp/ale'
 "Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
@@ -108,3 +114,44 @@ end
 
 nnoremap <C-Left> :bprevious<CR>
 nnoremap <C-Right> :bnext<CR>
+"=====[ Configure ALE for error tracking ]==================
+" You also need to install the following:  https://github.com/w0rp/ale
+
+highlight AleError    ctermfg=red     cterm=bold
+highlight AleWarning  ctermfg=magenta cterm=bold
+
+augroup ALE_Autoconfig
+	au!
+	autocmd User GVI_Start  silent call Stop_ALE()
+	autocmd User PV_Start   silent call Stop_ALE()
+	autocmd User PV_End     silent call Start_ALE()
+augroup END
+
+" let g:ale_sign_column_always   = 1
+let g:ale_set_loclist          = 0
+let g:ale_set_quickfix         = 1
+let g:ale_linters              = { 'perl': ['perl'] }
+let g:ale_perl_perl_executable = 'perl'
+let g:ale_perl_perl_options    = '-cw -Ilib'
+
+nmap <silent> ;m [Toggle automake on Perl files] :call Toggle_ALE()<CR>
+
+function! Start_ALE ()
+	ALEEnable
+endfunction
+
+function! Stop_ALE ()
+	silent call s:ChangeProfile(&filetype)
+	ALEDisable
+	call setqflist([])
+	redraw!
+endfunction
+
+function! Toggle_ALE ()
+	if g:ale_enabled
+		call Stop_ALE()
+	else
+		call Start_ALE()
+	endif
+	echo 'Error highlighting ' . (g:ale_enabled ? 'on' : 'off')
+endfunction

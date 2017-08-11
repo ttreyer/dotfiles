@@ -4,3 +4,9 @@
 
 # SBT's stuff
 target/
+
+# Mac's stuff
+.DS_Store
+
+# Perl local library
+local/
