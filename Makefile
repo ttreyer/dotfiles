@@ -20,3 +20,6 @@ zsh:
 	ln -s $(CURDIR)/.zshrc ~/.zshrc
 	ln -s $(CURDIR)/.p10k.zsh ~/.p10k.zsh
 
+tmux:
+	ln -s $(CURDIR)/.tmux.conf ~/.tmux.conf
+
